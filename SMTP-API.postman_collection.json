@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "477b19b1-23e9-495a-80c9-a978f245db6f",
+		"name": "SMTP-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30578108"
+	},
+	"item": [
+		{
+			"name": "Yes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://180.232.68.226:84/api/send-email?organizer=carlgutierrez@yopmail.com&responder=carl.gutierrez@outlook.com&message=Yes%20I%20am%20attending",
+					"protocol": "http",
+					"host": [
+						"180",
+						"232",
+						"68",
+						"226"
+					],
+					"port": "84",
+					"path": [
+						"api",
+						"send-email"
+					],
+					"query": [
+						{
+							"key": "organizer",
+							"value": "carlgutierrez@yopmail.com"
+						},
+						{
+							"key": "responder",
+							"value": "carl.gutierrez@outlook.com"
+						},
+						{
+							"key": "message",
+							"value": "Yes%20I%20am%20attending"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "No",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://180.232.68.226:84/api/send-email?organizer=carlgutierrez@yopmail.com&responder=carl.gutierrez@outlook.com&message=No,%20I%20am%20not%20attending",
+					"protocol": "http",
+					"host": [
+						"180",
+						"232",
+						"68",
+						"226"
+					],
+					"port": "84",
+					"path": [
+						"api",
+						"send-email"
+					],
+					"query": [
+						{
+							"key": "organizer",
+							"value": "carlgutierrez@yopmail.com"
+						},
+						{
+							"key": "responder",
+							"value": "carl.gutierrez@outlook.com"
+						},
+						{
+							"key": "message",
+							"value": "No,%20I%20am%20not%20attending"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "No, but has representative",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"organizer\": \"carl.john.c.gutierrez@ph.ey.com\",\r\n    \"responder\": \"carl.john.c.gutierrez@ph.ey.com\",\r\n    \"message\": \"No, but will send a representative\",\r\n    \"representative\": \"John Doe\",\r\n    \"position\": \"Associate\",\r\n    \"repreEmail\": \"johndoe@outlook.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://180.232.68.226:84/api/representative-info",
+					"protocol": "http",
+					"host": [
+						"180",
+						"232",
+						"68",
+						"226"
+					],
+					"port": "84",
+					"path": [
+						"api",
+						"representative-info"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
